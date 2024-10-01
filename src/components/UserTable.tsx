@@ -8,10 +8,18 @@ const UserTable = () => {
 
   const renderTable = () => {
     if (typeof data === 'string') return <>Failed to fetch data</>;
-    return data?.map((i) => <div key={i.id}>{i.name}</div>);
+    return data?.map((i) => (
+      <div key={i.id} style={{ height: '10vh' }}>
+        {i.name}
+      </div>
+    ));
   };
 
-  return <div>{renderTable()}</div>;
+  return (
+    <div style={{ display: 'block', height: 'fit-content' }}>
+      {renderTable()}
+    </div>
+  );
 };
 
 export default UserTable;
