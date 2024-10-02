@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { UserContext } from './context/UserContext';
-import UserTable from './components/UserTable';
-import Header from './components/Header';
+import Header from './layout/Header';
+import Content from './layout/Content';
 
 export const App = () => {
   const { fetchData } = useContext(UserContext);
@@ -12,7 +12,7 @@ export const App = () => {
   return (
     <div className="App">
       <Header />
-      <UserTable />
+      <Content />
     </div>
   );
 };

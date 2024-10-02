@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../context/UserContext';
+import { UserContext } from '../../context/UserContext';
+import UserCard from './UserCard';
 
 const UserTable = () => {
   const { data } = useContext(UserContext);
@@ -10,11 +11,7 @@ const UserTable = () => {
 
   const renderTable = () => {
     if (typeof data === 'string') return <>Failed to fetch data</>;
-    return data?.map((i) => (
-      <div key={i.id} style={{ height: '6vh' }}>
-        {i.name}
-      </div>
-    ));
+    return data?.map((i) => <UserCard key={i.id} user={i} />);
   };
 
   return (
@@ -26,9 +23,9 @@ const UserTable = () => {
           onChange={(e) => setFilterTerm(e.target.value)}
         />
         <>{filterTerm}</>
-        <div onClick={() => setAscend(!ascend)}>
+        <button onClick={() => setAscend(!ascend)}>
           {ascend ? 'ascending' : 'descending'}
-        </div>
+        </button>
       </div>
       {renderTable()}
     </div>
