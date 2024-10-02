@@ -1,0 +1,17 @@
+html {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: inherit;
+}
+
+body {
+  background-color: gold;
+  color: black;
+}
