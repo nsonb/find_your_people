@@ -1,9 +1,14 @@
 @charset "UTF-8";
 
+// base
 @use './base/base';
 @use 'base/fonts';
 // @use 'base/helpers';
 @use './base/typography';
 
+// layout
 @use './layout/header';
 @use './layout/content';
+
+// component
+@use './components/user-card.scss';
