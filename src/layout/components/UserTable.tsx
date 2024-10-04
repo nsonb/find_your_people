@@ -12,12 +12,15 @@ const UserTable = () => {
   const renderTable = () => {
     if (typeof data === 'string') return <>Failed to fetch data</>;
     return data
+      ?.filter(
+        (u) => u.name.includes(filterTerm) || u.email.includes(filterTerm)
+      )
       ?.sort((i, k) => (i.name > k.name ? 1 : -1) * ascend)
       .map((i) => <UserCard key={i.id} user={i} />);
   };
 
   return (
-    <div style={{ display: 'block', height: 'fit-content' }}>
+    <div style={{ height: '100%' }}>
       <div>
         <input
           value={filterTerm}
@@ -29,7 +32,7 @@ const UserTable = () => {
           {ascend === 1 ? 'ascending' : 'descending'}
         </button>
       </div>
-      {renderTable()}
+      <div className="user-table">{renderTable()}</div>
     </div>
   );
 };

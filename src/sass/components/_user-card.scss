@@ -1,12 +1,26 @@
+@use '../abstracts/variables' as v;
+
 .user-card {
-  background-color: black;
-  border-width: 0.5rem;
-  // border: solid 0.5rem white;
-  color: gold;
-  height: 8vh;
-  padding: 1vh;
-  margin-top: 1vh;
+  background-color: v.$grey-base;
+  border: solid 0.1rem v.$text-base;
+  height: fit-content;
+  padding: 2vh;
+  margin-top: 2vh;
   :first-child {
     margin-top: 0;
+  }
+  font-family: monospace;
+  transition: all ease 0.4s;
+  display: grid;
+  cursor: pointer;
+
+  &:hover {
+    border: solid 0.5rem v.$primary;
+    background-color: v.$text-base;
+    color: black;
+
+    .title {
+      color: v.$primary;
+    }
   }
 }

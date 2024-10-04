@@ -1,17 +1,22 @@
+@use '../abstracts/variables' as v;
+
 .header {
   display: flex;
   font-family: Bebas Neue;
-  font-weight: 400;
+  // font-family: 'Courier New', Courier, monospace;
+  font-weight: 800;
   font-style: normal;
   font-size: 5rem;
-  height: 10vh;
   width: 100vw;
-  background-color: gold;
-  color: black;
+  background-color: v.$background-base;
+  color: v.$primary;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
   transition: ease;
   transition-duration: 0.1s;
   cursor: pointer;
+  height: fit-content;
+  min-height: 10vh;
+  text-align: center;
 }

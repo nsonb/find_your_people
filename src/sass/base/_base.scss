@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as v;
+
 html {
   margin: 0;
   box-sizing: border-box;
@@ -12,6 +14,6 @@ html {
 }
 
 body {
-  background-color: gold;
-  color: black;
+  background-color: v.$background-base;
+  color: v.$text-base;
 }

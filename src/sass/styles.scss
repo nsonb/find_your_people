@@ -11,4 +11,8 @@
 @use './layout/content';
 
 // component
-@use './components/user-card.scss';
+@use './components/user-card';
+@use './components/user-table';
+@use './components/input';
+
+@use './abstracts/variables';
