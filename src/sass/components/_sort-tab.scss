@@ -1,0 +1,31 @@
+@use '../abstracts/variables' as v;
+
+.sort-tab {
+  background-color: v.$grey-base;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: flex-end;
+  height: fit-content;
+
+  .sort-button {
+    min-width: 15%;
+    width: fit-content;
+    color: white;
+    background-color: black;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    margin: 0;
+    margin-right: calc(2vh + 2px);
+    text-align: center;
+    transform: translateY(1vh);
+    transition: all 0.1s ease-in;
+    border: 1px;
+
+    &:hover {
+      color: v.$primary;
+      background-color: v.$background-base;
+    }
+  }
+}

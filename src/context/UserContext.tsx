@@ -11,22 +11,22 @@ export const UserContext = createContext<ContextType>({});
 */
 
 export const UserContextProvider = (props: props) => {
-  const [data, setData] = useState<User[] | string>();
+  const [userData, setUserData] = useState<User[] | string>();
   const fetchData = () => {
     userInstance
       .get('/users')
       .then((response: AxiosResponse) => {
         const resData = JSON.parse(JSON.stringify(response.data)) as User[];
-        setData(resData);
+        setUserData(resData);
       })
       .catch((err: AxiosError) => {
-        setData('Unable to fetch');
+        setUserData('Unable to fetch');
         console.log(err);
       });
   };
 
   return (
-    <UserContext.Provider value={{ data, fetchData }}>
+    <UserContext.Provider value={{ userData, fetchData }}>
       {props.children}
     </UserContext.Provider>
   );
@@ -37,6 +37,6 @@ interface props {
 }
 // custom type for typescript typechecking
 type ContextType = {
-  data?: User[] | string;
+  userData?: User[] | string;
   fetchData?: () => void;
 };
