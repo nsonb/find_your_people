@@ -17,3 +17,12 @@ body {
   background-color: v.$background-base;
   color: v.$text-base;
 }
+
+::placeholder {
+  color: white;
+  opacity: 0.2;
+}
+
+::-ms-input-placeholder {
+  color: v.$text-base;
+}

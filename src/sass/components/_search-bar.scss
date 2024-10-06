@@ -1,0 +1,18 @@
+@use '../abstracts/variables' as v;
+
+.search-bar {
+  background-color: blue;
+  height: fit-content;
+  padding: 2vh;
+
+  input {
+    background-color: v.$grey-base;
+    border-radius: 4px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+    height: 4vh;
+    width: 30vw;
+    padding: 1vh;
+    color: v.$primary;
+  }
+}

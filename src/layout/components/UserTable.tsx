@@ -21,11 +21,12 @@ const UserTable = () => {
 
   return (
     <div style={{ height: '100%' }}>
-      <div>
+      <div className="search-bar">
         <input
           value={filterTerm}
           type="string"
           onChange={(e) => setFilterTerm(e.target.value)}
+          placeholder="Search people"
         />
         <>{filterTerm}</>
         <button onClick={() => setAscend(ascend * -1)}>
